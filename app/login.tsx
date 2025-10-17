@@ -1,13 +1,13 @@
 import { useRouter } from "expo-router";
 import { Button, StyleSheet, Text, View } from "react-native";
 
-export default function HomeScreen() {
+export default function LoginScreen() {
   const router = useRouter();
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Dashboard (Tabs)</Text>
-      <Button title="Logout" onPress={() => router.replace("/login")} />
+      <Text style={styles.title}>Login Screen</Text>
+      <Button title="Go to Dashboard" onPress={() => router.replace("/(tabs)")} />
     </View>
   );
 }
