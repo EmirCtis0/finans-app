@@ -15,6 +15,14 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    ```bash
    npx expo start
    ```
+## 🔑 Dummy Login Credentials
+
+To access the app during testing, use the following dummy user:
+
+Email: test@fugevet.com
+
+Password: 123456
+
 
 In the output, you'll find options to open the app in a
 
