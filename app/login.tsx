@@ -31,7 +31,7 @@ export default function LoginScreen() {
       style={styles.safe}
     >
       <View style={styles.container}>
-        <Text style={styles.title}>Welcome Back 👋</Text>
+        <Text style={styles.title}>Tekrar Hoşgeldin 👋</Text>
 
         <TextInput
           style={styles.input}
@@ -45,7 +45,7 @@ export default function LoginScreen() {
 
         <TextInput
           style={styles.input}
-          placeholder="Password"
+          placeholder="Şifre"
           placeholderTextColor="#888"
           secureTextEntry
           value={password}
@@ -53,7 +53,7 @@ export default function LoginScreen() {
         />
 
         <TouchableOpacity style={styles.button} onPress={handleLogin}>
-          <Text style={styles.buttonText}>Sign In</Text>
+          <Text style={styles.buttonText}>Giriş Yap</Text>
         </TouchableOpacity>
 
         <Text style={styles.hint}>test@fugevet.com / 123456</Text>
