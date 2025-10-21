@@ -41,7 +41,9 @@ export default function DashboardScreen() {
     <View style={styles.transactionRow}>
       <View>
         <Text style={styles.transactionDescription}>{item.description}</Text>
-        <Text style={styles.transactionDate}>{item.date}</Text>
+        {/* Eğer payee (firma/kişi) varsa onu, yoksa kategoriyi göster */}
+        <Text style={styles.transactionPayee}>{item.payee || item.category}</Text> 
+        <Text style={styles.transactionDate}>{item.date.toLocaleDateString('tr-TR')}</Text>
       </View>
       <Text style={[
         styles.transactionAmount,
@@ -127,6 +129,16 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#111',
   },
+  transactionPayee: {
+        fontSize: 14,
+        color: '#888',
+        marginTop: 2,
+    },
+    transactionDate: {
+        fontSize: 12,
+        color: '#aaa',
+        marginTop: 4,
+    },
   logoutText: {
     fontSize: 16,
     color: '#7c3aed',
@@ -185,11 +197,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
   },
-  transactionDate: {
-    fontSize: 12,
-    color: '#6c757d',
-    marginTop: 4,
-  },
+ 
   transactionAmount: {
     fontSize: 16,
     fontWeight: 'bold',
