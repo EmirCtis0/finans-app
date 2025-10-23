@@ -1,27 +1,22 @@
 // app/_layout.tsx
-
 import { Stack } from "expo-router";
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function RootLayout() {
   return (
-    <SafeAreaProvider>
-      <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="index" />
-        <Stack.Screen name="login" />
-        <Stack.Screen name="(tabs)" />
-        <Stack.Screen name="modal" />
-        
-        {/* BU SATIRI EKLE */}
-        <Stack.Screen 
-          name="addTransactionModal" 
-          options={{ 
-            presentation: 'modal', 
-            headerShown: true, // Modal'ın kendi başlığı görünsün
-            title: 'Yeni İşlem' 
-          }} 
-        />
-      </Stack>
-    </SafeAreaProvider>
+    <Stack screenOptions={{ headerShown: false }}>
+      {/* Giriş yapılmadığında gösterilecek ekranlar */}
+      <Stack.Screen name="index" /> {/* Genellikle login'e yönlendirir */}
+      <Stack.Screen name="login" />
+
+      {/* Giriş yapıldıktan sonra gösterilecek Tabs layout */}
+      <Stack.Screen name="(tabs)" />
+
+      {/* Modal olarak açılacak ekranlar */}
+      <Stack.Screen name="modal" options={{ presentation: 'modal', headerShown: true, title: "Detay" }}/>
+      <Stack.Screen
+        name="addTransactionModal"
+        options={{ presentation: 'modal', headerShown: true, title: 'Yeni İşlem Ekle' }}
+      />
+    </Stack>
   );
 }
